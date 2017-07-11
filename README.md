@@ -4,9 +4,9 @@
 
 This is a collection of ChaiScript scripts for Geometrize, a tool for geometrizing images into geometric primitives.
 
-These scripts are intended to be useful for testing purposes, as well as a also a starting point to writing or adapting your own.
+These scripts are intended to be useful for testing purposes, as well as a starting point to writing or adapting your own.
 
-[![Geometrized Windswept Pre-Raphaelite](https://github.com/Tw1ddle/geometrize-scripts/blob/master/screenshots/windswept_600_circles.jpg?raw=true "Windswept, 600 triangles")](https://github.com/Tw1ddle/geometrize-lib)
+[![Geometrized Windswept Pre-Raphaelite](https://github.com/Tw1ddle/geometrize-scripts/blob/master/screenshots/windswept_600_circles.jpg?raw=true "Windswept, 600 Circles")](https://github.com/Tw1ddle/geometrize-lib)
 
 
 ## Usage
