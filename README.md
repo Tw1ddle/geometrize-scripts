@@ -4,14 +4,21 @@
 
 This is a collection of ChaiScript scripts for Geometrize, a tool for geometrizing images into geometric primitives.
 
-These scripts are intended to be useful for testing purposes, as well as a starting point to writing or adapting your own.
+These scripts are intended to be useful for testing purposes, as well as a starting point to writing and adapting your own.
 
 [![Geometrized Windswept Pre-Raphaelite](https://github.com/Tw1ddle/geometrize-scripts/blob/master/screenshots/windswept_600_circles.jpg?raw=true "Windswept, 600 Circles")](https://github.com/Tw1ddle/geometrize-lib)
 
 
-## Usage
+## Usage Examples
 
-First download or copy a script to your local drive. There are many ways to run scripts with Geometrize. Try drag-dropping the script onto the launch window, or entering the path to a script via the "run script" button in the launch window.
+Start by downloading the scripts somewhere on your local drive.
+
+ * Scripts can be run by invoking Geometrize from the command line with the --script parameter, followed by the path to the script.
+ * Embedded script consoles can run scripts through the runScript(path, params) calls.
+ * Scripts that do not require parameters can be drag-dropped onto the Geometrize launch window, or via the "run script" button in the launch window.
+ * Scripts for customizing shape mutation can be modified through the scripting panel, which is available for each image to be geometrized.
+
+Actual examples coming soon...
 
 ## Notes
  * Got an idea or suggestion? Open an issue on GitHub, or send Sam a message on [Twitter](https://twitter.com/Sam_Twidale).
