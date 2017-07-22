@@ -1,0 +1,19 @@
+This script that loads up an image, creates an image job, applies preferences, steps it the given number of times, and then writes the result to the given file
+
+// Load up an image file
+var image = loadImage(inputPath);
+
+// Create a RGBA8888 bitmap from the image, that Geometrize can turn to shapes
+var bitmap = createBitmap(image);
+
+// Create an image job that aims to reproduce the bitmap as shapes
+// This implicitly uses the average color of the bitmap as the starting point
+var job = ImageJob(bitmap);
+
+// Step the image job. Note that the steps are synchronous here for simplicity/convenience
+for(var i = 0; i < numSteps; i++) {
+    job.step();
+}
+
+// Exports the bitmap to the target path
+exportBitmap(outputPath, job.getTarget());
