@@ -1,19 +1,33 @@
-This script that loads up an image, creates an image job, applies preferences, steps it the given number of times, and then writes the result to the given file
+// This script loads up an image, creates an image job, applies preferences
+// It then adds the given number of shapes, and then writes the resulting image at the given file path
+
+var inputPath = "C:/Users/admin/Desktop/test_in.png";
+var outputPath = "C:/Users/admin/Desktop/test_out.png";
+var stepCount = 50;
 
 // Load up an image file
 var image = loadImage(inputPath);
+if(image.isNull()) {
+    messageBox("Failed to load image from: " + inputPath);
+    return;
+}
 
 // Create a RGBA8888 bitmap from the image, that Geometrize can turn to shapes
 var bitmap = createBitmap(image);
 
 // Create an image job that aims to reproduce the bitmap as shapes
-// This implicitly uses the average color of the bitmap as the starting point
-var job = ImageJob(bitmap);
+// This implicitly uses the average color of the bitmap as the starting background
+// Note we use a synchronous job for simplicity/convenience
+var job = SynchronousImageJob(bitmap);
 
-// Step the image job. Note that the steps are synchronous here for simplicity/convenience
-for(var i = 0; i < numSteps; i++) {
-    job.step();
+// Step the image job, adding a shape each time
+for (var i = 0; i < stepCount; ++i) {
+    job.stepModel();
 }
 
-// Exports the bitmap to the target path
-exportBitmap(outputPath, job.getTarget());
+// Exports the current bitmap to the output path
+if(exportBitmap(job.getCurrent(), outputPath)) {
+    messageBox("Wrote resulting image to: " + outputPath);
+} else {
+    messageBox("Failed to write image to: " + outputPath);
+}
