@@ -1,12 +1,12 @@
-[![Geometrize scripts logo](https://github.com/Tw1ddle/geometrize-scripts/blob/master/screenshots/geometrize_scripts_logo.png?raw=true "Geometrize - library for geometrizing images into geometric primitives scripts logo")](https://github.com/Tw1ddle/geometrize-lib)
+[![Geometrize scripts logo](https://github.com/Tw1ddle/geometrize-scripts/blob/master/screenshots/geometrize_scripts_logo.png?raw=true "Geometrize - library for geometrizing images into geometric primitives scripts logo")](http://www.geometrize.co.uk/)
 
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](https://github.com/Tw1ddle/geometrize-scripts/blob/master/LICENSE)
 
-This is a collection of ChaiScript scripts for Geometrize, a tool for geometrizing images into geometric primitives.
+This is a collection of ChaiScript scripts for [Geometrize](http://www.geometrize.co.uk/), a tool for geometrizing images into geometric primitives.
 
 These scripts are intended to be useful for testing purposes, as well as a starting point to writing and adapting your own.
 
-[![Geometrized Windswept Pre-Raphaelite](https://github.com/Tw1ddle/geometrize-scripts/blob/master/screenshots/windswept_600_circles.jpg?raw=true "Windswept, 600 Circles")](https://github.com/Tw1ddle/geometrize-lib)
+[![Geometrized Windswept Pre-Raphaelite](https://github.com/Tw1ddle/geometrize-scripts/blob/master/screenshots/windswept_600_circles.jpg?raw=true "Windswept, 600 Circles")](http://www.geometrize.co.uk/)
 
 
 ## Usage Examples
