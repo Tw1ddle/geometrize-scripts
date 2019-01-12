@@ -1,0 +1,7 @@
+def setupCircle(shape) {
+    var v = randomInVector(aoiPixels);
+
+    shape.m_x = v.first;
+    shape.m_y = v.second;
+    shape.m_r = randomInRange(1, 32);
+}

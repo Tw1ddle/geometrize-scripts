@@ -1,7 +1,4 @@
 def setupQuadraticBezier(shape) {
-    var xBound = shape.m_model.getWidth();
-    var yBound = shape.m_model.getHeight();
-
     shape.m_x1 = randomInRange(0, xBound - 1);
     shape.m_y1 = randomInRange(0, yBound - 1);
     shape.m_cx = randomInRange(0, xBound - 1);

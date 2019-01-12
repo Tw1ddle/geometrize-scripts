@@ -1,0 +1,5 @@
+def setupPolyline(shape) {
+    for (var i = 0; i < 4; ++i) {
+        shape.m_points.push_back(randomInVector(aoiPixels));
+    }
+}

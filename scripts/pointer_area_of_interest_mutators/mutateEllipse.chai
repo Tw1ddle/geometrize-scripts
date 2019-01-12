@@ -2,8 +2,9 @@ def mutateEllipse(shape) {
     var r = randomInRange(0, 2);
     switch(r) {
         case (0) {
-            shape.m_x = clamp(shape.m_x + randomInRange(-16, 16), 0, xBound - 1);
-            shape.m_y = clamp(shape.m_y + randomInRange(-16, 16), 0, yBound - 1);
+            var v = randomInVector(aoiPixels);
+            shape.m_x = v.first;
+            shape.m_y = v.second;
             break;
         }
         case (1) {

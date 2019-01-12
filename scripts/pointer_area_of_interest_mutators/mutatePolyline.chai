@@ -1,0 +1,8 @@
+def mutatePolyline(shape) {
+    var i = randomInRange(0, shape.m_points.size() - 1);
+    var point = shape.m_points[i];
+
+    var v = randomInVector(aoiPixels);
+    shape.m_points[i].first = v.first;
+    shape.m_points[i].second = v.second;
+}

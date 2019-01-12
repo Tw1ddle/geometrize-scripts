@@ -1,0 +1,21 @@
+def mutateRotatedRectangle(shape) {
+    var v = randomInVector(aoiPixels);
+
+    var r = randomInRange(0, 2);
+    switch(r) {
+        case (0) {
+            shape.m_x1 = v.first;
+            shape.m_y1 = v.second;
+            break;
+        }
+        case (1) {
+            shape.m_x2 = v.first;
+            shape.m_y2 = v.second;
+            break;
+        }
+        case (2) {
+            shape.m_angle = clamp(shape.m_angle + randomInRange(-4, 4), 0, 360);
+            break;
+        }
+    }
+}

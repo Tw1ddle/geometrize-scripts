@@ -1,7 +1,4 @@
 def mutateRectangle(shape) {
-    var xBound = shape.m_model.getWidth();
-    var yBound = shape.m_model.getHeight();
-
     var r = randomInRange(0, 1);
     switch(r) {
         case (0) {

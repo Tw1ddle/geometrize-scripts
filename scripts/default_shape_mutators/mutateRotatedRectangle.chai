@@ -1,7 +1,4 @@
 def mutateRotatedRectangle(shape) {
-    var xBound = shape.m_model.getWidth();
-    var yBound = shape.m_model.getHeight();
-
     var r = randomInRange(0, 2);
     switch(r) {
         case (0) {

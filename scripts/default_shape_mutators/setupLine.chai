@@ -1,7 +1,4 @@
 def setupLine(shape) {
-    var xBound = shape.m_model.getWidth();
-    var yBound = shape.m_model.getHeight();
-
     var first = randomInRange(0, xBound - 1);
     var second = randomInRange(0, yBound - 1);
 

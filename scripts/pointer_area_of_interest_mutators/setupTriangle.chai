@@ -1,0 +1,12 @@
+def setupTriangle(shape) {
+    var x1y1 = randomInVector(aoiPixels);
+    var x2y2 = randomInVector(aoiPixels);
+    var x3y3 = randomInVector(aoiPixels);
+
+    shape.m_x1 = x1y1.first;
+    shape.m_y1 = x1y1.second;
+    shape.m_x2 = x2y2.first;
+    shape.m_y2 = x2y2.second;
+    shape.m_x3 = x3y3.first;
+    shape.m_y3 = x3y3.second;
+}

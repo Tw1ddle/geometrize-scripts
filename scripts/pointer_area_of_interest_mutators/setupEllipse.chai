@@ -1,6 +1,8 @@
 def setupEllipse(shape) {
-    shape.m_x = randomInRange(0, xBound);
-    shape.m_y = randomInRange(0, yBound);
+    var v = randomInVector(aoiPixels);
+
+    shape.m_x = v.first;
+    shape.m_y = v.second;
     shape.m_rx = randomInRange(1, 32);
     shape.m_ry = randomInRange(1, 32);
 }
