@@ -1,0 +1,1 @@
+currentShapeCount >= 500; // Stop after 500 shapes are added
