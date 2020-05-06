@@ -1,7 +1,0 @@
-printToAllScriptConsoleWidgets(customTabletEventDataToString(lastTabletEvent));
-
-{
-    var circle = Circle(lastTabletEvent.xScenePos, lastTabletEvent.yScenePos, 5 + lastTabletEvent.pressure * 120);
-    aoi := circle.clone();
-    aoiPixels = shapeToPixels(aoi, xBound, yBound);
-}
