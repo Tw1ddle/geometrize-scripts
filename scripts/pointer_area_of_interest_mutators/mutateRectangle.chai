@@ -1,4 +1,4 @@
-def mutateRotatedRectangle(shape) {
+def mutateRectangle(shape) {
     var v = randomInVector(aoiPixels);
 
     var r = randomInRange(0, 1);
