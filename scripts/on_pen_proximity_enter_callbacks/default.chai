@@ -1,1 +1,1 @@
-printToAllScriptConsoleWidgets(customTabletEventDataToString(lastProximityTabletEvent));
+printToAllScriptConsoleWidgets("On pen proximity enter callback...");
