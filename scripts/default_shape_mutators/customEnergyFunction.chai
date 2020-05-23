@@ -1,0 +1,3 @@
+def customEnergyFunction(lines, alpha, target, current, buffer, bitmap) {
+    return defaultEnergyFunction(lines, alpha, target, current, buffer, bitmap);
+}
