@@ -18,7 +18,7 @@ var bitmap = createBitmap(image);
 // Create an image task that aims to reproduce the bitmap as shapes
 // This implicitly uses the average color of the bitmap as the starting background
 // Note we use a synchronous task for simplicity/convenience
-var task = SynchronousImagetask(bitmap);
+var task = SynchronousImageTask(bitmap);
 
 // Step the image task, adding a shape each time
 for (var i = 0; i < stepCount; ++i) {
