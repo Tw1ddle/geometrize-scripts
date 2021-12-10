@@ -1,9 +1,9 @@
 def setupLine(shape) {
-    var first = randomInRange(0, xMax - 1);
-    var second = randomInRange(0, yMax - 1);
+    var first = randomInRange(xMin, xMax - 1);
+    var second = randomInRange(yMin, yMax - 1);
 
-    shape.m_x1 = clamp(first + randomInRange(-32, 32), 0, xMax - 1);
-    shape.m_y1 = clamp(second + randomInRange(-32, 32), 0, yMax - 1);
-    shape.m_x2 = clamp(first + randomInRange(-32, 32), 0, xMax - 1);
-    shape.m_y2 = clamp(second + randomInRange(-32, 32), 0, yMax - 1);
+    shape.m_x1 = clamp(first + randomInRange(-32, 32), xMin, xMax - 1);
+    shape.m_y1 = clamp(second + randomInRange(-32, 32), yMin, yMax - 1);
+    shape.m_x2 = clamp(first + randomInRange(-32, 32), xMin, xMax - 1);
+    shape.m_y2 = clamp(second + randomInRange(-32, 32), yMin, yMax - 1);
 }

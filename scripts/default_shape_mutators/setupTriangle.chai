@@ -1,6 +1,6 @@
 def setupTriangle(shape) {
-    shape.m_x1 = randomInRange(0, xMax - 1);
-    shape.m_y1 = randomInRange(0, yMax - 1);
+    shape.m_x1 = randomInRange(xMin, xMax - 1);
+    shape.m_y1 = randomInRange(yMin, yMax - 1);
     shape.m_x2 = shape.m_x1 + randomInRange(-32, 32);
     shape.m_y2 = shape.m_y1 + randomInRange(-32, 32);
     shape.m_x3 = shape.m_x1 + randomInRange(-32, 32);

@@ -1,6 +1,6 @@
 def setupRectangle(shape) {
-    shape.m_x1 = randomInRange(0, xMax - 1);
-    shape.m_y1 = randomInRange(0, yMax - 1);
-    shape.m_x2 = clamp(shape.m_x1 + randomInRange(1, 32), 0, xMax - 1);
-    shape.m_y2 = clamp(shape.m_y1 + randomInRange(1, 32), 0, yMax - 1);
+    shape.m_x1 = randomInRange(xMin, xMax - 1);
+    shape.m_y1 = randomInRange(yMin, yMax - 1);
+    shape.m_x2 = clamp(shape.m_x1 + randomInRange(1, 32), xMin, xMax - 1);
+    shape.m_y2 = clamp(shape.m_y1 + randomInRange(1, 32), yMin, yMax - 1);
 }

@@ -1,8 +1,8 @@
 def setupQuadraticBezier(shape) {
-    shape.m_x1 = randomInRange(0, xMax - 1);
-    shape.m_y1 = randomInRange(0, yMax - 1);
-    shape.m_cx = randomInRange(0, xMax - 1);
-    shape.m_cy = randomInRange(0, yMax - 1);
-    shape.m_x2 = randomInRange(0, xMax - 1);
-    shape.m_y2 = randomInRange(0, yMax - 1);
+    shape.m_x1 = randomInRange(xMin, xMax - 1);
+    shape.m_y1 = randomInRange(yMin, yMax - 1);
+    shape.m_cx = randomInRange(xMin, xMax - 1);
+    shape.m_cy = randomInRange(yMin, yMax - 1);
+    shape.m_x2 = randomInRange(xMin, xMax - 1);
+    shape.m_y2 = randomInRange(yMin, yMax - 1);
 }
