@@ -9,7 +9,7 @@ def mutateCircle(shape) {
             break;
         }
         case (1) {
-            shape.m_r = clamp(shape.m_r + randomInRange(-16, 16), 1, xBound - 1);
+            shape.m_r = clamp(shape.m_r + randomInRange(-16, 16), 1, xMax - 1);
             break;
         }
     }

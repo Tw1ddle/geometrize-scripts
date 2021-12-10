@@ -8,6 +8,6 @@ printToAllScriptConsoleWidgets(customTabletEventDataToString(lastTabletEvent));
     if(brushSize >= minBrushSize) {
         var circle = Circle(lastTabletEvent.xScenePos, lastTabletEvent.yScenePos, brushSize);
         global aoi := circle.clone();
-        global aoiPixels = shapeToPixels(aoi, xBound, yBound); // Used by the area of influence shape mutators
+        global aoiPixels = shapeToPixels(aoi, xMax, yMax); // Used by the area of influence shape mutators
     }
 }

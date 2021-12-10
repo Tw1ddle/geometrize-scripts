@@ -2,12 +2,12 @@ def mutateCircle(shape) {
     var r = randomInRange(0, 1);
     switch(r) {
         case (0) {
-            shape.m_x = clamp(shape.m_x + randomInRange(-16, 16), 0, xBound - 1);
-            shape.m_y = clamp(shape.m_y + randomInRange(-16, 16), 0, yBound - 1);
+            shape.m_x = clamp(shape.m_x + randomInRange(-16, 16), 0, xMax - 1);
+            shape.m_y = clamp(shape.m_y + randomInRange(-16, 16), 0, yMax - 1);
             break;
         }
         case (1) {
-            shape.m_r = clamp(shape.m_r + randomInRange(-16, 16), 1, xBound - 1);
+            shape.m_r = clamp(shape.m_r + randomInRange(-16, 16), 1, xMax - 1);
             break;
         }
     }

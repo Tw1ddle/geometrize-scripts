@@ -8,11 +8,11 @@ def mutateEllipse(shape) {
             break;
         }
         case (1) {
-            shape.m_rx = clamp(shape.m_rx + randomInRange(-16, 16), 1, xBound - 1);
+            shape.m_rx = clamp(shape.m_rx + randomInRange(-16, 16), 1, xMax - 1);
             break;
         }
         case (2) {
-            shape.m_ry = clamp(shape.m_ry + randomInRange(-16, 16), 1, yBound - 1);
+            shape.m_ry = clamp(shape.m_ry + randomInRange(-16, 16), 1, yMax - 1);
             break;
         }
     }
