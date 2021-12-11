@@ -1,0 +1,112 @@
+// This script transforms slices of an image into different shape types
+
+// Load up the image file
+var image = loadImage(inputPath);
+if(image.isNull()) {
+    messageBox("Failed to load image from: " + inputPath);
+    return;
+}
+
+// Make sure the image is in RGBA8888 format
+image := convertImageToRgba8888(image);
+if(image.isNull()) {
+    messageBox("Failed to convert image to the proper format");
+    return;
+}
+
+// Create a RGBA8888 bitmap from the image
+// Note that this downscales the image as well (to reduce processing time)
+var bitmap = convertImageToBitmapWithDownscaling(image);
+
+// Create an image task
+var task = createImageTask(bitmap);
+
+// Create some image task preferences
+var prefs = ImageTaskPreferences();
+
+prefs.setCandidateShapeCount(200);
+prefs.setMaxShapeMutations(200);
+prefs.setShapeAlpha(255);
+prefs.setSeed(1000);
+prefs.setShapeTypes(RECTANGLE);
+
+// Only use one thread per task
+prefs.setMaxThreads(1);
+
+// Allow shape bounds to be set
+prefs.setShapeBoundsEnabled(true);
+prefs.setShapeBounds(0, 0, 20, 100); // Shapes will be added in horizontal strips
+
+// Define code to change the type of shape to use, and where to add them, based on the number of shapes added so far
+def getShapeAddedCallbackCode() {
+  return "
+  // This changes the type of shape to use, and where to add them, based on the number of shapes added so far
+  if(currentShapeCount >= 0) {
+      task.getPreferences().setShapeBounds(0, 0, 20, 100);
+      task.getPreferences().setShapeTypes(RECTANGLE);
+  }
+  if(currentShapeCount >= 200) {
+      task.getPreferences().setShapeBounds(20, 0, 40, 100);
+      task.getPreferences().setShapeTypes(TRIANGLE);
+  }
+  if(currentShapeCount >= 400) {
+      task.getPreferences().setShapeBounds(40, 0, 60, 100);
+      task.getPreferences().setShapeTypes(ROTATED_RECTANGLE);
+  }
+  if(currentShapeCount >= 600) {
+      task.getPreferences().setShapeBounds(60, 0, 80, 100);
+      task.getPreferences().setShapeTypes(ROTATED_ELLIPSE);
+  }
+  if(currentShapeCount >= 800) {
+      task.getPreferences().setShapeBounds(80, 0, 100, 100);
+      task.getPreferences().setShapeTypes(CIRCLE);
+  }
+  ";
+}
+
+// Define a stop condition script that will stop the geometrization after a while
+def getStopConditionCode() {
+  return "return currentShapeCount >= 1000;";
+}
+
+// Define code to run when the stop condition is met
+// Saves the files in a folder on the user's desktop
+def getOnStopConditionMetCode() {
+  var outputDir = getDesktopDirectoryLocation() + "/geometrize_batch_output/";
+  createDirectory(outputDir);
+
+  var outputPath = outputDir + "/result_" + getFilenameTimestamp() +"_" + getUuidString() + ".png";
+  return "exportBitmap(task.getCurrent()," + "\"" + outputPath + "\"" + ");";
+}
+
+// Change the type of shape to add and the bounds in which to add them, based on the number of shapes added so far
+prefs.setScript("after_add_shape_callback_for_script", getShapeAddedCallbackCode());
+
+// Set a stop condition that will stop the task when the condition is met
+prefs.setScript("stop_condition_for_script", getStopConditionCode());
+
+// Save the image when the stop condition is met
+prefs.setScript("on_stop_condition_met_for_script", getOnStopConditionMetCode());
+
+// Set the preferences up on the image task
+task.setPreferences(prefs);
+
+// Create the image task UI window
+var imageTaskWindow = createImageTaskWindow();
+
+// Set the image task up on the UI
+imageTaskWindow.setImageTask(task);
+// Show the image task window
+imageTaskWindow.show();
+
+// Give the window an id we can use to refer to it later
+var name = getUuidString();
+imageTaskWindow.setCommandHandlerName(name);
+
+// Hide a bunch of unnecessary things that will slow down the batch processing
+//sendCommandString(name, "hide_pixmap_view");
+//sendCommandString(name, "hide_vector_view");
+//sendCommandString(name, "hide_script_console");
+
+// Tell the window to click the start button
+sendCommandString(name, "start");
